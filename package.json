@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Obsidian plugin: edit Business Model Canvases backed by plain markdown",
   "main": "main.js",
+  "packageManager": "pnpm@10.24.0",
   "scripts": {
     "dev": "node esbuild.config.mjs",
     "build": "node esbuild.config.mjs production",
