@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-business-model-canvas",
+  "name": "Business Model Canvas",
+  "version": "0.1.0",
+  "minAppVersion": "1.7.2",
+  "description": "Edit Business Model Canvases as a nine-block grid, backed by a plain markdown file.",
+  "author": "Kris Jenkins",
+  "isDesktopOnly": false
+}

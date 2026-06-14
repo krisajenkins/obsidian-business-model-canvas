@@ -1,0 +1,131 @@
+.bmc-container {
+  padding: 0;
+}
+
+.bmc-root {
+  height: 100%;
+  overflow: auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/*
+ * The nine-block Business Model Canvas grid.
+ *
+ *   kp ka vp cr cs
+ *   kp kr vp ch cs
+ *   cost cost cost rev rev
+ *
+ * Top blocks span two columns each (10-col grid); the bottom two split
+ * the width 50/50.
+ */
+.bmc-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.7fr);
+  grid-template-areas:
+    "kp kp ka ka vp vp cr cr cs cs"
+    "kp kp kr kr vp vp ch ch cs cs"
+    "cost cost cost cost cost rev rev rev rev rev";
+  gap: 6px;
+  min-height: calc(100% - 0px);
+  height: 100%;
+}
+
+.bmc-block {
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-secondary);
+  overflow: hidden;
+}
+
+.bmc-block-title {
+  flex: 0 0 auto;
+  padding: 6px 8px;
+  font-size: var(--font-ui-smaller);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.bmc-items {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bmc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.bmc-item-text {
+  flex: 1 1 auto;
+  font-size: var(--font-ui-small);
+  cursor: text;
+  min-width: 0;
+}
+
+/* Tighten Obsidian's rendered <p> wrapper inside a sticky note. */
+.bmc-item-text p {
+  margin: 0;
+}
+
+.bmc-item-delete {
+  flex: 0 0 auto;
+  visibility: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0 2px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.bmc-item:hover .bmc-item-delete {
+  visibility: visible;
+}
+
+.bmc-item-delete:hover {
+  color: var(--text-error);
+}
+
+.bmc-item-edit,
+.bmc-add {
+  font-size: var(--font-ui-small);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bmc-item-edit {
+  padding: 4px 6px;
+}
+
+.bmc-add {
+  flex: 0 0 auto;
+  margin: 4px 6px 6px;
+  width: calc(100% - 12px);
+  background: transparent;
+  border: 1px dashed var(--background-modifier-border);
+  color: var(--text-muted);
+}
+
+.bmc-add:focus {
+  border-style: solid;
+  color: var(--text-normal);
+}
